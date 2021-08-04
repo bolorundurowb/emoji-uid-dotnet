@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace emoji_uid_dotnet
+namespace emoji_dotnet
 {
     internal static class Resources
     {

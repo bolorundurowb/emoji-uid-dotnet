@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>emoji_uid_dotnet</RootNamespace>
+    <RootNamespace>emoji_dotnet</RootNamespace>
   </PropertyGroup>
 
 </Project>

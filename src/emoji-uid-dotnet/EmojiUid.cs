@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Text;
 
-namespace emoji_uid_dotnet
+namespace emoji_dotnet
 {
     public static class EmojiUid
     {
+        // ReSharper disable once InconsistentNaming
         private static readonly Random _random = new Random();
 
         public static string Generate(int length = 5)
