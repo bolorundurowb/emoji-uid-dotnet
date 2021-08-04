@@ -4,7 +4,7 @@ namespace emoji_dotnet
 {
     internal static class Resources
     {
-        public static List<List<string>> Emojis = new()
+        public static readonly List<List<string>> Emojis = new()
         {
             new List<string>
             {
