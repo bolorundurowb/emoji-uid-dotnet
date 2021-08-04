@@ -8,7 +8,13 @@ namespace emoji_dotnet
         // ReSharper disable once InconsistentNaming
         private static readonly Random _random = new Random();
 
-        public static string Generate(int length = 5)
+        /// <summary>
+        /// Generates a random emoji string of a specified length.
+        /// </summary>
+        /// <param name="length">Minimum length of the generated id.</param>
+        /// <returns>The generated emoji uid.</returns>
+        /// <exception cref="ArgumentException">Thrown when length is less than 1.</exception>
+        public static string Generate(int length = 3)
         {
             if (length < 1)
                 throw new ArgumentException("Invalid length value.");

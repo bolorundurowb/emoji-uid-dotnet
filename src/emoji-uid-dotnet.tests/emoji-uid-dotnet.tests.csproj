@@ -2,9 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>emoji_uid_dotnet.tests</RootNamespace>
+    <RootNamespace>emoji_dotnet.tests</RootNamespace>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>emoji-dotnet.tests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +21,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\emoji-uid-dotnet\emoji-uid-dotnet.csproj" />
   </ItemGroup>
 
 </Project>
