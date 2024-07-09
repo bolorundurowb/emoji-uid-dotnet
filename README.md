@@ -1,6 +1,6 @@
 # emoji-uid-dotnet 🚚👻🍊
 
-[![Build Status](https://travis-ci.com/bolorundurowb/emoji-uid-dotnet.svg?branch=master)](https://travis-ci.com/bolorundurowb/emoji-uid-dotnet)
+[![CI - Build, Test & Coverage](https://github.com/bolorundurowb/emoji-uid-dotnet/actions/workflows/build.yml/badge.svg)](https://github.com/bolorundurowb/emoji-uid-dotnet/actions/workflows/build.yml)
 
 A .NET port of the [emoji-uid](https://github.com/Noviny/emoji-uid) project
 
