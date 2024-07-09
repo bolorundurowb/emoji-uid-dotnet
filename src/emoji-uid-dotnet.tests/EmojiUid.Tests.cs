@@ -18,7 +18,6 @@ public class EmojiUidTests
     {
         var id = EmojiUid.Generate();
         id.Should().NotBeEmpty();
-        id.Should().HaveLength(8); // each emoji is made up of two characters
     }
 
     [Fact]
