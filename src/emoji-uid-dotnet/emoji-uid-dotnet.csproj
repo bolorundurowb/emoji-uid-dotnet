@@ -1,25 +1,31 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <RootNamespace>emoji_dotnet</RootNamespace>
+    <RootNamespace>EmojiDotNet</RootNamespace>
     <Title>emoji-uid-dotnet</Title>
     <Authors>Winner-Timothy Bolorunduro</Authors>
     <Description>A library to generate relatively unique emoji IDs</Description>
-    <Copyright>Copyright 20201</Copyright>
+    <Copyright>©2021-2024  Bolorunduro Winner-Timothy</Copyright>
     <PackageProjectUrl>https://github.com/bolorundurowb/emoji-uid-dotnet</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/bolorundurowb/emoji-uid-dotnet/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/bolorundurowb/emoji-uid-dotnet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>emoji, uid, emoji-uid, shortid</PackageTags>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>- increase default generated length.
+    - change the namespace</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Company>Bolorunduro Winner-Timothy</Company>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
+    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <FileVersion>2.0.0</FileVersion>
     <NeutralLanguage>en-NG</NeutralLanguage>
-    <LangVersion>9.0</LangVersion>
-    <TargetFrameworks>net5.0;netstandard1.1;netstandard1.2;netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6;netstandard1.7;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <LangVersion>default</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <TargetFramework>netstandard1.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <Version>2.0.0</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 </Project>
