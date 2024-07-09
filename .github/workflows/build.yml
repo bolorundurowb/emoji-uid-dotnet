@@ -18,13 +18,13 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Restore dependencies
-        run: dotnet restore ./src/**/*.csproj
+        run: dotnet restore ${{ github.workspace }}/src/emoji-uid-dotenv.sln
 
       - name: Build all projects
-        run: dotnet build ./src/**/*.csproj -c Release --no-restore
+        run: dotnet build ${{ github.workspace }}/src/emoji-uid-dotenv.sln -c Release --no-restore
 
       - name: Run tests with code coverage
-        run: dotnet test emoji-uid-dotenv.sln /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./coverage/
+        run: dotnet test ${{ github.workspace }}/src/emoji-uid-dotenv.sln /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./coverage/
 
       - name: Upload coverage to Coveralls
         uses: coverallsapp/github-action@v1.1.2
