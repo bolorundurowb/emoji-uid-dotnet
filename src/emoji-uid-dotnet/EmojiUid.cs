@@ -1,12 +1,15 @@
-﻿using System;
+using System;
 using System.Text;
+using System.Threading;
 
 namespace EmojiDotNet;
 
 public static class EmojiUid
 {
-    // ReSharper disable once InconsistentNaming
-    private static readonly Random _random = new();
+    private static int _seed = Environment.TickCount;
+
+    private static readonly ThreadLocal<Random> Random =
+        new(() => new Random(Interlocked.Increment(ref _seed)));
 
     /// <summary>
     /// Generates a unique identifier composed of random emojis.
@@ -26,17 +29,16 @@ public static class EmojiUid
         if (length < 1)
             throw new ArgumentException("Invalid length value.");
 
-        var builder = new StringBuilder();
+        var emojis = Resources.Emojis;
+        var emojisLength = emojis.Length;
+
+        var rng = Random.Value!;
+        // UTF-16 length varies (surrogates, ZWJ); capacity avoids most reallocations.
+        var builder = new StringBuilder(length * 24);
 
         for (var i = 0; i < length; i++)
-            builder.Append(GetEmoji());
+            builder.Append(emojis[rng.Next(emojisLength)]);
 
         return builder.ToString();
-    }
-
-    private static string GetEmoji()
-    {
-        var emojis = Resources.Emojis[_random.Next(Resources.Emojis.Count)];
-        return emojis[_random.Next(emojis.Count)];
     }
 }
