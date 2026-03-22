@@ -4,10 +4,9 @@ namespace EmojiDotNet;
 
 internal static class Resources
 {
-    public static readonly List<List<string>> Emojis = new()
-    {
-        new List<string>
-        {
+    public static readonly List<List<string>> Emojis =
+    [
+        [
             "😀",
             "😃",
             "😄",
@@ -77,9 +76,9 @@ internal static class Resources
             "🙀",
             "😿",
             "😾"
-        },
-        new List<string>
-        {
+        ],
+
+        [
             "🤲",
             "👐",
             "🙌",
@@ -146,9 +145,9 @@ internal static class Resources
             "👨‍👧‍👦",
             "👨‍👦‍👦",
             "👨‍👧‍👧"
-        },
-        new List<string>
-        {
+        ],
+
+        [
             "🧥",
             "👚",
             "👕",
@@ -211,9 +210,9 @@ internal static class Resources
             "🀄️",
             "🃏",
             "🎴"
-        },
-        new List<string>
-        {
+        ],
+
+        [
             "🐶",
             "🐱",
             "🐭",
@@ -330,9 +329,9 @@ internal static class Resources
             "🌸",
             "🌼",
             "🌻"
-        },
-        new List<string>
-        {
+        ],
+
+        [
             "🌞",
             "🌝",
             "🌛",
@@ -397,9 +396,9 @@ internal static class Resources
             "🕥",
             "🕦",
             "🕧"
-        },
-        new List<string>
-        {
+        ],
+
+        [
             "🍏",
             "🍎",
             "🍐",
@@ -496,9 +495,9 @@ internal static class Resources
             "🥣",
             "🥡",
             "🥢"
-        },
-        new List<string>
-        {
+        ],
+
+        [
             "⚽️",
             "🏀",
             "🏈",
@@ -552,9 +551,9 @@ internal static class Resources
             "🎳",
             "🎮",
             "🎰"
-        },
-        new List<string>
-        {
+        ],
+
+        [
             "🚗",
             "🚕",
             "🚙",
@@ -673,9 +672,9 @@ internal static class Resources
             "🌌",
             "🌉",
             "🌁"
-        },
-        new List<string>
-        {
+        ],
+
+        [
             "⌚️",
             "📱",
             "📲",
@@ -839,9 +838,9 @@ internal static class Resources
             "🏳️",
             "🏁",
             "🚩"
-        },
-        new List<string>
-        {
+        ],
+
+        [
             "❤️",
             "🧡",
             "💛",
@@ -858,9 +857,9 @@ internal static class Resources
             "💖",
             "💘",
             "💝"
-        },
-        new List<string>
-        {
+        ],
+
+        [
             "✨",
             "💥",
             "🔥",
@@ -896,6 +895,6 @@ internal static class Resources
             "🎶",
             "🙏",
             "⭐️"
-        }
-    };
+        ]
+    ];
 }

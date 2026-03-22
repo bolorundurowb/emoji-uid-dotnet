@@ -9,11 +9,18 @@ public static class EmojiUid
     private static readonly Random _random = new();
 
     /// <summary>
-    /// Generates a random emoji string of a specified length.
+    /// Generates a unique identifier composed of random emojis.
     /// </summary>
-    /// <param name="length">Minimum length of the generated id.</param>
-    /// <returns>The generated emoji uid.</returns>
-    /// <exception cref="ArgumentException">Thrown when length is less than 1.</exception>
+    /// <param name="length">
+    /// The length of the emoji-based unique identifier. The default value is 4.
+    /// The length must be greater than 0, otherwise an exception will be thrown.
+    /// </param>
+    /// <returns>
+    /// A string containing a sequence of random emojis with the specified length.
+    /// </returns>
+    /// <exception cref="ArgumentException">
+    /// Thrown when the provided length is less than 1.
+    /// </exception>
     public static string Generate(int length = 4)
     {
         if (length < 1)
