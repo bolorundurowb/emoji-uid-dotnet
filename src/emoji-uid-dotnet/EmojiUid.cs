@@ -1,35 +1,44 @@
-﻿using System;
+using System;
 using System.Text;
+using System.Threading;
 
 namespace EmojiDotNet;
 
 public static class EmojiUid
 {
-    // ReSharper disable once InconsistentNaming
-    private static readonly Random _random = new();
+    private static int _seed = Environment.TickCount;
+
+    private static readonly ThreadLocal<Random> Random =
+        new(() => new Random(Interlocked.Increment(ref _seed)));
 
     /// <summary>
-    /// Generates a random emoji string of a specified length.
+    /// Generates a unique identifier composed of random emojis.
     /// </summary>
-    /// <param name="length">Minimum length of the generated id.</param>
-    /// <returns>The generated emoji uid.</returns>
-    /// <exception cref="ArgumentException">Thrown when length is less than 1.</exception>
+    /// <param name="length">
+    /// The length of the emoji-based unique identifier. The default value is 4.
+    /// The length must be greater than 0, otherwise an exception will be thrown.
+    /// </param>
+    /// <returns>
+    /// A string containing a sequence of random emojis with the specified length.
+    /// </returns>
+    /// <exception cref="ArgumentException">
+    /// Thrown when the provided length is less than 1.
+    /// </exception>
     public static string Generate(int length = 4)
     {
         if (length < 1)
             throw new ArgumentException("Invalid length value.");
 
-        var builder = new StringBuilder();
+        var emojis = Resources.Emojis;
+        var emojisLength = emojis.Length;
+
+        var rng = Random.Value!;
+        // UTF-16 length varies (surrogates, ZWJ); capacity avoids most reallocations.
+        var builder = new StringBuilder(length * 24);
 
         for (var i = 0; i < length; i++)
-            builder.Append(GetEmoji());
+            builder.Append(emojis[rng.Next(emojisLength)]);
 
         return builder.ToString();
-    }
-
-    private static string GetEmoji()
-    {
-        var emojis = Resources.Emojis[_random.Next(Resources.Emojis.Count)];
-        return emojis[_random.Next(emojis.Count)];
     }
 }
