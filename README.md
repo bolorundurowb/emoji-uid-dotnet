@@ -1,6 +1,7 @@
 # emoji-uid-dotnet 🚚👻🍊
 
-[![CI - Build, Test & Coverage](https://github.com/bolorundurowb/emoji-uid-dotnet/actions/workflows/build.yml/badge.svg)](https://github.com/bolorundurowb/emoji-uid-dotnet/actions/workflows/build.yml) [![codecov](https://codecov.io/gh/bolorundurowb/emoji-uid-dotnet/graph/badge.svg?token=VEUYE5ZTAH)](https://codecov.io/gh/bolorundurowb/emoji-uid-dotnet)
+[![Build, Test & Coverage](https://github.com/bolorundurowb/emoji-uid-dotnet/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/bolorundurowb/emoji-uid-dotnet/actions/workflows/build-and-test.yml)
+[![codecov](https://codecov.io/gh/bolorundurowb/emoji-uid-dotnet/graph/badge.svg?token=VEUYE5ZTAH)](https://codecov.io/gh/bolorundurowb/emoji-uid-dotnet)
 
 A .NET port of the [emoji-uid](https://github.com/Noviny/emoji-uid) project
 
