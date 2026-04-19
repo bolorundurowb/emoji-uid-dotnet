@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="emoji-uid-dotnet.tests/emoji-uid-dotnet.tests.csproj" />
+  <Project Path="emoji-uid-dotnet/emoji-uid-dotnet.csproj" />
+</Solution>
