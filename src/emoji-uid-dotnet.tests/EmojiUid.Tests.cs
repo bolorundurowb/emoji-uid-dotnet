@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 using System.Linq;
-using AwesomeAssertions;
+using static OmniAssert.Assert;
 using Xunit;
 
 namespace EmojiDotNet.Tests;
@@ -9,34 +9,35 @@ namespace EmojiDotNet.Tests;
 public class EmojiUidTests
 {
     [Fact]
-    public void ShouldValidateProvidedLength()
+    public void Generate_WhenLengthIsZero_ThrowsArgumentException()
     {
-        Action action = () => EmojiUid.Generate(0);
-        action.Should().ThrowExactly<ArgumentException>("Invalid length value.");
+        Throws<ArgumentException>(() => EmojiUid.Generate(0))
+            .WithMessage("Invalid length value.");
     }
 
     [Fact]
-    public void ShouldGenerateUidWithDefaultLength()
+    public void Generate_WithNoArguments_ReturnsUidOfDefaultLength()
     {
         var id = EmojiUid.Generate();
-        id.Should().NotBeEmpty();
-        GetEmojiCount(id).Should().Be(4);
+        Verify(id).NotToBeNull();
+        Verify(GetEmojiCount(id)).ToBe(4);
     }
 
     [Fact]
-    public void ShouldGenerateUidWithSpecifiedLength()
+    public void Generate_WithSpecifiedLength_ReturnsUidOfCorrectLength()
     {
         const int length = 10;
         var id = EmojiUid.Generate(length);
-        id.Should().NotBeEmpty();
-        GetEmojiCount(id).Should().Be(length);
+        Verify(id).NotToBeNull();
+        Verify(GetEmojiCount(id)).ToBe(length);
     }
 
     [Fact]
-    public void ShouldGenerateDifferentUids()
+    public void Generate_WhenCalledMultipleTimes_ReturnsUniqueUids()
     {
         var ids = Enumerable.Range(0, 100).Select(_ => EmojiUid.Generate()).ToList();
-        ids.Distinct().Count().Should().Be(100);
+        Verify(ids).NotToBeEmpty();
+        Verify(ids).HasUniqueCount(100);
     }
 
     private static int GetEmojiCount(string text)
